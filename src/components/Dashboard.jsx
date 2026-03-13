@@ -4,7 +4,6 @@ import UserPanel from './UserPanel'
 import CalendarView from './CalendarView'
 import Analytics from './Analytics'
 import { format } from 'date-fns'
-import { saveRoutineData, getAllRoutineData } from '../services/api'
 
 const Dashboard = ({ onLogout }) => {
   const [currentDate, setCurrentDate] = useState(format(new Date(), 'yyyy-MM-dd'))

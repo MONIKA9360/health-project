@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Heart } from 'lucide-react'
-import { login } from '../services/api'
 
 const Login = ({ onLogin }) => {
   const [username, setUsername] = useState('')
