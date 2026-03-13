@@ -18,7 +18,7 @@ const Login = ({ onLogin }) => {
     if (result.success) {
       onLogin()
     } else {
-      setError('Invalid credentials! Only Moni & Surya can access ❤️💙')
+      setError('Invalid credentials')
     }
     
     setLoading(false)
@@ -55,8 +55,7 @@ const Login = ({ onLogin }) => {
               </h1>
               <Heart className="text-blue-500 heart-pulse" size={40} fill="currentColor" />
             </div>
-            <p className="text-gray-600 text-lg">Daily life tracker for Moni & Surya</p>
-            <div className="mt-2 text-3xl">❤️💙</div>
+            <p className="text-gray-600 text-lg">Daily life tracker</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -93,13 +92,9 @@ const Login = ({ onLogin }) => {
               disabled={loading}
               className="w-full bg-gradient-to-r from-red-500 to-blue-500 text-white font-bold py-3 rounded-lg hover:from-red-600 hover:to-blue-600 transition transform hover:scale-105 disabled:opacity-50"
             >
-              {loading ? 'Logging in...' : 'Login ❤️💙'}
+              {loading ? 'Logging in...' : 'Login'}
             </button>
           </form>
-
-          <div className="mt-6 text-center text-gray-500 text-sm">
-            Made with love for Moni & Surya 💕
-          </div>
         </div>
       </div>
     </div>
