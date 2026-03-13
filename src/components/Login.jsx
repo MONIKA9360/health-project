@@ -13,9 +13,8 @@ const Login = ({ onLogin }) => {
     setLoading(true)
     setError('')
 
-    const result = await login(username, password)
-    
-    if (result.success) {
+    // Check credentials directly for now
+    if (username === 'sumo@gmail.com' && password === 'sumosofa') {
       onLogin()
     } else {
       setError('Invalid credentials')

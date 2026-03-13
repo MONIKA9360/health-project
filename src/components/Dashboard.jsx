@@ -13,17 +13,13 @@ const Dashboard = ({ onLogout }) => {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    loadAllData()
-  }, [])
-
-  const loadAllData = async () => {
-    setLoading(true)
-    const result = await getAllRoutineData()
-    if (result.success) {
-      setRoutineData(result.data)
+    // Load from localStorage
+    const saved = localStorage.getItem('sumoRoutineData')
+    if (saved) {
+      setRoutineData(JSON.parse(saved))
     }
     setLoading(false)
-  }
+  }, [])
 
   const updateUserData = async (user, data) => {
     const newData = {
@@ -35,8 +31,8 @@ const Dashboard = ({ onLogout }) => {
     }
     setRoutineData(newData)
     
-    // Save to backend
-    await saveRoutineData(user, currentDate, data)
+    // Save to localStorage
+    localStorage.setItem('sumoRoutineData', JSON.stringify(newData))
   }
 
   const handleSave = async (user, data) => {
